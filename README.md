@@ -7,39 +7,64 @@ To implement encryption and decryption using C program.
 PC with Linux operating system
 
 # PROCEDURE:
-1] Open code blocks and type the program for encryption and decryption. 2] Save the program using extension .c
-3]	Run the program using build and run.
-4]	Prime number is given as input. If it is not a prime number then wrong input is displayed. 5] Then a message is entered.
-6]	The encrypted form of the message is displayed.
-7]	The decrypted form is also displayed as final output. 8] Thus the output is obtained.
+1] Open code blocks and type the program for encryption and decryption. <br>
+2] Save the program using extension .c<br>
+3]	Run the program using build and run.<br>
+4]	Prime number is given as input. If it is not a prime number then wrong input is displayed.<br> 5] Then a message is entered.<br>
+6]	The encrypted form of the message is displayed.<br>
+7]	The decrypted form is also displayed as final output.<br> 
+8] Thus the output is obtained.<br>
 
 # PROGRAM:
-#include<stdio.h> #include<stdlib.h> #include<math.h> #include<string.h>
-longintp,q,n,t,flag,e[100],d[100],temp[100],j,m[100],en[100],i; char msg[100];
-int prime(longint); void ce();
-long int cd(longint); void encrypt();
-void decrypt(); void main()
-{ printf("\nENTERFIRSTPRIMENUMBER\n");
-scanf("%d",&p); flag=prime(p); if(flag=0)
+```
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include<string.h>
+longintp,q,n,t,flag,e[100],d[100],temp[100],j,m[100],en[100],i;
+char msg[100];
+int prime(longint);
+void ce();
+long int cd(longint);
+void encrypt();
+void decrypt();
+void main()
 {
-printf("\nWRONGINPUT\n"); exit(1);
-} printf("\nENTERANOTHERPRIMENUMBER\n");
-scanf("%d",&q);
- 
-flag=prime(q); if(flag==0||p==q)
+printf("\nENTERFIRSTPRIMENUMBER\n");
+scanf("%d",&p); flag=prime(p);
+if(flag=0)
 {
-printf("\nWRONGINPUT\n"); exit(1);
+printf("\nWRONGINPUT\n");
+exit(1);
 }
-printf("\nENTERMESSAGE\n"); fflush(stdin);
-scanf("%s",msg); for(i=0;msg[i]!=NULL;i++)
-m[i]=msg[i]; n=p*q; t=(p-1)*(q-1); ce();
-printf("\nPOSSIBLEVALUESOFeANDdARE\n"); for(i=0;i<j-1;i++)
-printf("\n%ld\t%ld",e[i],d[i]); encrypt(); decrypt(); }
+printf("\nENTERANOTHERPRIMENUMBER\n");
+scanf("%d",&q);
+flag=prime(q);
+if(flag==0||p==q)
+{
+printf("\nWRONGINPUT\n");
+exit(1);
+}
+printf("\nENTERMESSAGE\n");
+fflush(stdin);
+scanf("%s",msg);
+for(i=0;msg[i]!=NULL;i++)
+m[i]=msg[i];
+n=p*q;
+t=(p-1)*(q-1);
+ce();
+printf("\nPOSSIBLEVALUESOFeANDdARE\n");
+for(i=0;i<j-1;i++)
+printf("\n%ld\t%ld",e[i],d[i]);
+encrypt();
+decrypt(); }
 int prime(long int pr)
 {
-int i; j=sqrt(pr); for(i=2;i<=j;i++)
+int i; j=sqrt(pr);
+for(i=2;i<=j;i++)
 {
-if(pr%i==0) return0;
+if(pr%i==0)
+return0;
 }
 return1;
 }
@@ -48,29 +73,35 @@ void ce()
 int k; k=0;
 for(i=2;i<t;i++)
 {
-if(t%i==0) continue; flag=prime(i);
+if(t%i==0)
+continue;
+flag=prime(i);
 if(flag==1&&i!=p&&i!=q)
 {
-e[k]=i; flag=cd(e[k]); if(flag>0)
+e[k]=i; flag=cd(e[k]);
+if(flag>0)
 {
-d[k]=flag; k++;
+d[k]=flag;
+k++;
 }
-if(k==99) break;
- 
+if(k==99)
+break;
 }
 }
 }
 long int cd(long int x)
 {
-long int k=1; while(1)
+long int k=1;
+while(1)
 {
-k=k+t; if(k%x==0) return(k/x);
+k=k+t;
+if(k%x==0)
+return(k/x);
 }
-
 }
 void encrypt()
 {
-longintpt,ct,key=e[0],k,len; i=0;
+long int pt,ct,key=e[0],k,len; i=0;
 len=strlen(msg); while(i!=len)
 {
 pt=m[i]; pt=pt-96; k=1;
@@ -102,15 +133,8 @@ for(i=0;m[i]!=-1; i++
 )
 printf("%c",m[i]);
 }
-
-
-
-
-
+```
 # OUTPUT:
-
- 
-
-
-# RESULT:
+<img width="1363" height="724" alt="Screenshot 2025-10-17 132328" src="https://github.com/user-attachments/assets/f717b973-3228-486f-91c3-8cfe3367623e" />
+ # RESULT:
 Thus the encryption and decryption is implemented and the output is obtained and verified successfully.
